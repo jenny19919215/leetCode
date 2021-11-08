@@ -42,6 +42,12 @@ public class CountingValleys {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
         int steps = Integer.parseInt(bufferedReader.readLine().trim());
+        Integer a = 3;
+        Integer b = 4;
+        Integer c = 5;
+        a = b;
+        b = c;
+
 
         String path = bufferedReader.readLine();
 

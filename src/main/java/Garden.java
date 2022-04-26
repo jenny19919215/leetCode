@@ -11,6 +11,7 @@ public class Garden {
         int pos = 0;
         int max_left = 0;
         int count = 0;
+
         while (max_right < n) {
             for (int i = pos; i < n + 1; i++) {
                 if (realRange[i][0] <= max_left) {

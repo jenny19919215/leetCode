@@ -42,6 +42,36 @@ public class PrintNumbers {
         return generateTrees(1, n);
     }
 
+    public int solution(int[] A) {
+        int min = 1;
+        if (A == null) {
+            return min;
+        }
+        boolean flag = false;
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] < 0) continue;
+            if (i > 0 && A[i - 1] >= 0 && A[i] - A[i - 1] > 1) {
+                min = A[i - 1] + 1;
+                flag = true;
+                break;
+            }
+            if (i > 0 && A[i - 1] < 0 && A[i] - A[i - 1] > 2 && A[i] != 1) {
+                min = A[i] - 1;
+                flag = true;
+                break;
+            }
+
+        }
+        if (!flag) {
+            min = A[A.length - 1] > 0 ? A[A.length - 1] + 1 : min;
+        }
+
+
+        return min;
+
+
+    }
+
     public static List<TreeNode> generateTrees(int start, int end) {
         List<TreeNode> allTrees = new LinkedList<TreeNode>();
         if (start > end) {
